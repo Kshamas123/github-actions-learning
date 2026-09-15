@@ -12,6 +12,7 @@ jobs:
             - run: echo "job1 Step 3"
     job2:
          runs-on: ubuntu-latest
+         needs: job1
          steps:
             - run: echo "job2 Step 1"
             - run: echo "job2 Step 2"
