@@ -4,9 +4,16 @@ on:
   push:
 
 jobs:
-    hello:
+    job1:
          runs-on: ubuntu-latest
          steps: 
-            - run: echo "Step 1"
-            - run: exit 1
-            - run: echo "Step 3"
+            - run: echo "job1 Step 1"
+            - run: echo "job1 Step 2"
+            - run: echo "job1 Step 3"
+    job2:
+         runs-on: ubuntu-latest
+         steps:
+            - run: echo "job2 Step 1"
+            - run: echo "job2 Step 2"
+            - run: echo "job2 Step 3"
+            
