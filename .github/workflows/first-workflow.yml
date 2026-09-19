@@ -21,4 +21,5 @@ jobs:
     job3:
           runs-on: ubuntu-latest
           steps:
+              - uses: actions/checkout@v4
               - run: ls
