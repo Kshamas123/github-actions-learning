@@ -24,6 +24,8 @@ jobs:
         steps:
             - uses: actions/checkout@v5
 
+            - run: echo "hello"
+
             - run: pwd
 
             - run: ls -la
