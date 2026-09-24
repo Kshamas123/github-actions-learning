@@ -32,7 +32,7 @@ jobs:
       job4:
           runs-on: ubuntu-latest
           steps: 
-               - run: echo $PROJECT_NAME
-               - run: echo $APP_ENV
+               - run: echo "$PROJECT_NAME"
+               - run: echo "$APP_ENV"
 
 
