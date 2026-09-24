@@ -31,8 +31,17 @@ jobs:
     #         - run: cat test.txt
       job4:
           runs-on: ubuntu-latest
+          env: 
+             JOB_ID=4
           steps: 
                - run: echo "$PROJECT_NAME"
                - run: echo "$APP_ENV"
+               - run: echo "$JOB_ID"
+      job5:
+          runs-on: ubuntu-latest
+          steps: 
+               - run: echo "$PROJECT_NAME"
+               - run: echo "$APP_ENV"
+               - run: echo "$JOB_ID"
 
 
