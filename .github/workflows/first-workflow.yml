@@ -3,6 +3,9 @@ name: My First Workflow
 on:
   push:
 
+env:
+   PROJECT_NAME: github-action-learning
+   APP_ENV: development
 jobs:
     # job1:
     #      runs-on: ubuntu-latest
@@ -18,16 +21,18 @@ jobs:
     #         - run: echo "job2 Step 2"
     #         - run: echo "job2 Step 3"
     #
-    job3:
-        runs-on: ubuntu-latest
+    # job3:
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - uses: actions/checkout@v5 #this uses helps to include the already existing action
+    #         - run: echo "hello"
+    #         - run: pwd
+    #         - run: ls -la
+    #         - run: cat test.txt
+      job4:
+          runs-on: ubuntu-latest
+          steps: 
+               - run: echo $PROJECT_NAME
+               - run: echo $APP_ENV
 
-        steps:
-            - uses: actions/checkout@v5
 
-            - run: echo "hello"
-
-            - run: pwd
-
-            - run: ls -la
-
-            - run: cat test.txt
