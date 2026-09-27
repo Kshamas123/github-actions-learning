@@ -29,27 +29,33 @@ jobs:
     #         - run: pwd
     #         - run: ls -la
     #         - run: cat test.txt
-      job4:
-          runs-on: ubuntu-latest
-          env: 
-             JOB_ID: 4
-          steps: 
-               - run: echo "$PROJECT_NAME"
-               - run: echo "$APP_ENV"
-               - run: echo "$JOB_ID"
-      job5:
-          runs-on: ubuntu-latest
-          steps: 
-               - run: echo "$PROJECT_NAME"
-               - run: echo "$APP_ENV"
-               - run: echo "$JOB_ID"
-      job6:
+      # job4:
+      #     runs-on: ubuntu-latest
+      #     env: 
+      #        JOB_ID: 4
+      #     steps: 
+      #          - run: echo "$PROJECT_NAME"
+      #          - run: echo "$APP_ENV"
+      #          - run: echo "$JOB_ID"
+      # job5:
+      #     runs-on: ubuntu-latest
+      #     steps: 
+      #          - run: echo "$PROJECT_NAME"
+      #          - run: echo "$APP_ENV"
+      #          - run: echo "$JOB_ID"
+      # job6:
+      #     runs-on: ubuntu-latest
+      #     steps:
+      #          - run : echo "$STEP_MESSAGE"
+      #            env: 
+      #               STEP_MESSAGE: "This is step level env variable"
+      #          - run : echo "$STEP_MESSAGE"
+
+      # Github provided values - context
+      job7:
           runs-on: ubuntu-latest
           steps:
-               - run : echo "$STEP_MESSAGE"
-                 env: 
-                    STEP_MESSAGE: "This is step level env variable"
-               - run : echo "$STEP_MESSAGE"
+              - run: echo $GITHUB_REPOSITORY
                  
 
 
