@@ -43,5 +43,13 @@ jobs:
                - run: echo "$PROJECT_NAME"
                - run: echo "$APP_ENV"
                - run: echo "$JOB_ID"
+      job6:
+          runs-on: ubuntu-latest
+          steps:
+               -run : echo "$STEP_MESSAGE"
+               env: 
+                 STEP_MESSAGE: "This is step level env variable"
+               -run : echo "$STEP_MESSAGE"
+                 
 
 
