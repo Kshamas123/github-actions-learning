@@ -48,7 +48,7 @@ jobs:
           steps:
                - run : echo "$STEP_MESSAGE"
                  env: 
-                 STEP_MESSAGE: "This is step level env variable"
+                    STEP_MESSAGE: "This is step level env variable"
                - run : echo "$STEP_MESSAGE"
                  
 
