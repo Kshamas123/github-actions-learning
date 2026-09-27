@@ -46,10 +46,10 @@ jobs:
       job6:
           runs-on: ubuntu-latest
           steps:
-               -run : echo "$STEP_MESSAGE"
-               env: 
+               - run : echo "$STEP_MESSAGE"
+                 env: 
                  STEP_MESSAGE: "This is step level env variable"
-               -run : echo "$STEP_MESSAGE"
+               - run : echo "$STEP_MESSAGE"
                  
 
 
