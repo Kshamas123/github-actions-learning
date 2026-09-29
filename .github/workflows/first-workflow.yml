@@ -57,6 +57,6 @@ jobs:
           steps:
               - run: echo $GITHUB_REPOSITORY
               - run: echo ${{ github.repository }}
-              - run: echo ${{ github.branch }}
+              - run: echo ${{ github.ref_name }}
 
 
