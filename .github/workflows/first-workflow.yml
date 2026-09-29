@@ -52,12 +52,12 @@ jobs:
       #          - run : echo "$STEP_MESSAGE"
 
       # Github provided values - context 
-      #testing with different branch
       job7:
           runs-on: ubuntu-latest
           steps:
               - run: echo $GITHUB_REPOSITORY
               - run: echo ${{ github.repository }}
-              - run: echo ${{ github.ref_name }}
+              - run: echo ${{ github.ref_name }}   #prints the branch which triggered the workflow 
+              - run: echo ${{ github.actor}}  #prints the owner who triggered workflow 
 
 
