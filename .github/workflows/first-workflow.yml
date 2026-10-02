@@ -52,12 +52,19 @@ jobs:
       #          - run : echo "$STEP_MESSAGE"
 
       # Github provided values - context 
-      job7:
-          runs-on: ubuntu-latest
-          steps:
-              - run: echo $GITHUB_REPOSITORY
-              - run: echo ${{ github.repository }}
-              - run: echo ${{ github.ref_name }}   #prints the branch which triggered the workflow 
-              - run: echo ${{ github.actor}}  #prints the owner who triggered workflow 
+      # job7:
+      #     runs-on: ubuntu-latest
+      #     steps:
+      #         - run: echo $GITHUB_REPOSITORY
+      #         - run: echo ${{ github.repository }}
+      #         - run: echo ${{ github.ref_name }}   #prints the branch which triggered the workflow 
+      #         - run: echo ${{ github.actor}}  #prints the owner who triggered workflow
+      job8:
+           runs-on: ubuntu-latest
+           steps:
+                - run: echo "Workflow started"
+                - if: ${{ github.ref_name == 'main'}}
+                          echo "Was pushed to main branch"
+                - run: echo "End of workflow" 
 
 
