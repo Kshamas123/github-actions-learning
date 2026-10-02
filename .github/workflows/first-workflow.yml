@@ -63,7 +63,7 @@ jobs:
            runs-on: ubuntu-latest
            steps:
                 - run: echo "Workflow started"
-                - if: ${{ github.ref_name == 'contest-branch'}}
+                - if: GITHUB_REF_NAME == 'contest-branch'
                   run: echo "Was pushed to contest branch"
                 - run: echo "End of workflow" 
 
