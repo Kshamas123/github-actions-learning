@@ -64,7 +64,7 @@ jobs:
            steps:
                 - run: echo "Workflow started"
                 - if: ${{ github.ref_name == 'main'}}
-                          echo "Was pushed to main branch"
+                  run: echo "Was pushed to main branch"
                 - run: echo "End of workflow" 
 
 
