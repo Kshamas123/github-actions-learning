@@ -72,7 +72,7 @@ jobs:
              MY_MESSAGE: "hello from env"
           steps: 
                - run: echo "$MY_MESSAGE"
-               - if: ${{ env.MY_MESSAGE == 'hello from github context'}}
+               - if: ${{ $MY_MESSAGE == 'hello from github context'}}
                  run: echo "This condition is true"
                - run: echo "job 9 end"
                
