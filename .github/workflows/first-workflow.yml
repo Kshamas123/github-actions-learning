@@ -78,7 +78,7 @@ jobs:
       conditions:
              runs-on: ubuntu-latest
              env:
-                 ENVIRONMENT: development
+                 ENVIRONMENT: production
              steps:
                 - name: AND condition
                   if: ${{github.ref_name=='main' && env.ENVIRONMENT=='development'}}
