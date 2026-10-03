@@ -72,9 +72,23 @@ jobs:
              MY_MESSAGE: "hello from env"
           steps: 
                - run: echo "$MY_MESSAGE"
-               - if: ${{ $MY_MESSAGE == 'hello from github context'}}
+               - if: ${{ env.MY_MESSAGE == 'hello from github context'}}
                  run: echo "This condition is true"
                - run: echo "job 9 end"
+      conditions:
+             runs-on: ubuntu-latest
+             env:
+                 ENVIRONMENT: development
+             steps:
+                - name: AND condition
+                  if: ${{github.ref_name=='main' && env.ENVIRONMENT=='development'}}
+                  run: echo "AND condition passed"
+                - name: OR condition
+                  if: ${{github.ref_name=='main' || env.ENVIRONMENT}}
+                  run: echo "OR condition passed"
+                - name: NOT condition
+                  if: ${{ !(env.ENVIRONMENT=='production')}}
+                  run: echo "NOT condition passed"
                
 
 
