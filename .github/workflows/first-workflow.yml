@@ -59,12 +59,22 @@ jobs:
       #         - run: echo ${{ github.repository }}
       #         - run: echo ${{ github.ref_name }}   #prints the branch which triggered the workflow 
       #         - run: echo ${{ github.actor}}  #prints the owner who triggered workflow
-      job8:
-           runs-on: ubuntu-latest
-           steps:
-                - run: echo "Workflow started"
-                - if: ${{ github.ref_name }} == 'contest-branch'
-                  run: echo "Was pushed to contest branch"
-                - run: echo "End of workflow" 
+      # job8:
+      #      runs-on: ubuntu-latest
+      #      steps:
+      #           - run: echo "Workflow started"
+      #           - if: ${{ github.ref_name }} == 'contest-branch'
+      #             run: echo "Was pushed to contest branch"
+      #           - run: echo "End of workflow" 
+      job9:
+          runs-on: ubuntu-latest
+          env: 
+             MY_MESSAGE: "hello from env"
+          steps: 
+               - run: echo "$MY_MESSAGE"
+               - if: ${{ env.MY_MESSAGE == 'hello from env'}}
+                 run: echo "This condition is true"
+               - run: echo "job 9 end"
+               
 
 
