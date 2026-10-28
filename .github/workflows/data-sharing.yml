@@ -11,8 +11,22 @@ jobs:
         run: |
           APP_VERSION="2.5.0"
           echo "Version: $APP_VERSION"
-          bash -c 'echo "$CITY"'
+          bash -c 'echo "$APP_VERSION"'    #without export even shell variable cannot be access by child process
 
       - name: Step 2
         run: |
           echo "Version: $APP_VERSION"
+
+  variable-test-export:
+    runs-on: ubuntu-latest
+
+    steps:
+       - name : Step 1 - Share variable
+         run: |
+            export CITY="MANGALURU"
+            echo "Step 1: $CITY"
+            bash -c 'echo "$CITY"'
+       
+       - name : Step 2 - Read exported variable
+         run: |
+            echo "Step 2: $CITY"
