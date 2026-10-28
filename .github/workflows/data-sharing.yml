@@ -30,3 +30,17 @@ jobs:
        - name : Step 2 - Read exported variable
          run: |
             echo "Step 2: $CITY"
+  
+  variable-test-github-env:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Share variable using github env
+        run: |
+          COUNTRY="India"
+          echo "COUNTRY=$COUNTRY" >> "$GITHUB_ENV"
+          echo "Step 1: $COUNTRY"
+
+      - name: Step 2 - Read shared variable
+        run: |
+          echo "Step 2: $COUNTRY"
