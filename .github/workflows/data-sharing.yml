@@ -38,9 +38,9 @@ jobs:
       - name: Step 1 - Share variable using github env
         run: |
           COUNTRY="India"
-          echo "COUNTRY=$COUNTRY" >> "$GITHUB_ENV"
+          echo "c1=$COUNTRY" >> "$GITHUB_ENV"
           echo "Step 1: $COUNTRY"
 
       - name: Step 2 - Read shared variable
         run: |
-          echo "Step 2: $COUNTRY"
+          echo "Step 2: $c1"
