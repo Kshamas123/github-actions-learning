@@ -54,7 +54,7 @@ jobs:
 
         run: |
           TOTAL=5000
-          echo "total=$TOTAL" >>$GITHUB_OUTPUT
+          echo "result_value=$TOTAL" >>$GITHUB_OUTPUT
 
       - name: Step 2 - Display total 
         run: |
