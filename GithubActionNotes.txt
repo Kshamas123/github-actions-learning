@@ -1,0 +1,11 @@
+GITHUB_ENV
+- A step produces a value.
+- We write it into the special environment file.
+- GitHub Actions makes it an environment variable for subsequent steps in the same job.
+- The receiving steps don't need to know which step originally produced it.
+- They simply access it using $VARIABLE_NAME.
+GITHUB_OUTPUT
+- A step produces a result.
+- We publish that result as a named output.
+- We give the producing step an id.
+- Subsequent steps explicitly reference the producing step's ID and output name.
