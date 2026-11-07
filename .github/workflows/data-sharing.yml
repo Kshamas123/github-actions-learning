@@ -49,12 +49,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Step 1 - Calulate total
-      -id: calculation
+      - name: Step 1 - Calulate total
+        id: calculation
 
-      -run: |
-          TOTAL : 5000
+      - run: |
+          TOTAL=5000
           echo "total=$TOTAL" >>$GITHUB_OUTPUT
 
-      -run: |
+      - run: |
           echo "Total : ${{ steps.calculation.outputs.total}}"
