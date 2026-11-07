@@ -52,9 +52,10 @@ jobs:
       - name: Step 1 - Calulate total
         id: calculation
 
-      - run: |
+        run: |
           TOTAL=5000
           echo "total=$TOTAL" >>$GITHUB_OUTPUT
 
-      - run: |
+      - name: Step 2 - Display total 
+        run: |
           echo "Total : ${{ steps.calculation.outputs.total}}"
