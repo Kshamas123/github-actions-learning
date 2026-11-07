@@ -58,4 +58,4 @@ jobs:
 
       - name: Step 2 - Display total 
         run: |
-          echo "Total : ${{ steps.calculation.outputs.TOTAL}}"
+          echo "Total : ${{ steps.calculation.outputs.RESULT_VALUE}}"
