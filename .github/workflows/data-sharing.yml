@@ -58,4 +58,23 @@ jobs:
 
       - name: Step 2 - Display total 
         run: |
-          echo "Total : ${{ steps.calculation.outputs.RESULT_VALUE}}"
+          echo "Total : ${{ steps.calculation.outputs.RESULT_VALUE}}"   #the github named output is case sensitive
+
+  multiple-step-outputs:
+     runs-on: ubuntu-latest
+
+     steps:
+       - name: Step 1 - publish multiple outputs
+         id: defination
+
+         run: |
+            VERSION = 2.5.0
+            ENVIRONMENT = "production"
+            echo "version=$VERSION" >> $GITHUB_OUTPUT
+            echo "environment=$ENVIRONMENT" >> $GITHUB_OUTPUT
+
+         run: |
+             echo ${{ steps.defination.outputs.version}}
+             echo ${{ steps.defination.outputs.environment}}
+
+    
