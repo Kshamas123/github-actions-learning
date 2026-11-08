@@ -88,7 +88,7 @@ jobs:
         - name: Step 2 - publish github env 2
           run: echo "CITY=bengaluru" >> $GITHUB_ENV
         - name: Step 3 - accessing the result_value
-          run: ech $CITY
+          run: echo $CITY
         
 
 
