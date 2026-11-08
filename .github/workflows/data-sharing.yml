@@ -79,4 +79,17 @@ jobs:
              echo ${{ steps.defination.outputs.version }}
              echo ${{ steps.defination.outputs.environment }}
 
+  overwriting-github-env:
+     runs-on: ubuntu-latest
+
+     steps:
+        - name: Step 1 - publish github env 1
+          run: echo "CITY=mangalore" >> $GITHUB_ENV
+        - name: Step 2 - publish github env 2
+          run: echo "CITY=bengaluru" >> $GITHUB_ENV
+        - name: Step 3 - accessing the result_value
+          run: ech $CITY
+        
+
+
     

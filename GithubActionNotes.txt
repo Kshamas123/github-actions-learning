@@ -9,3 +9,7 @@ GITHUB_OUTPUT
 - We publish that result as a named output.
 - We give the producing step an id.
 - Subsequent steps explicitly reference the producing step's ID and output name.
+
+- GITHUB_ENV → Shared environment variables; subsequent steps access them directly.
+- GITHUB_OUTPUT → Named step outputs; subsequent steps explicitly reference the producer's ID and output name.
+- Both follow the producer-consumer pattern.
