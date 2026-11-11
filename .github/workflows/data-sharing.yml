@@ -101,6 +101,21 @@ jobs:
             echo "total=$TOTAL" >> "$GITHUB_OUTPUT"
 
             echo "value is ${{ steps.access_same.outputs.total }}"
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Calculate Build Version
+        id: calculation
+        run: |
+          echo "build_version=2.5.0" >> "$GITHUB_OUTPUT"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display version
+        run: |
+          echo "${{ steps.calculation.outputs.build_version }}"
         
 
 
