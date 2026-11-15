@@ -126,7 +126,7 @@ jobs:
         id: generate-app-Version
         run: |
            GENERATE_VERSION="3.1.0"
-           echo "generate_version=$GENERATE_VERSION" >> $GITHUB_OUTPUT
+           echo "generate_version=$GENERATE_VERSION" >> "$GITHUB_OUTPUT"
 
   release:
     runs-on: ubuntu-latest
