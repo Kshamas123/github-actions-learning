@@ -125,8 +125,8 @@ jobs:
       - name: producer step
         id: generate-app-Version
         run: |
-           APP_VERSION = "3.1.0"
-           echo "app_version=$APP_VERSION" >> $GITHUB_OUTPUT
+           GENERATE_VERSION = "3.1.0"
+           echo "generate_version=$GENERATE_VERSION" >> $GITHUB_OUTPUT
 
   release:
     runs-on: ubuntu-latest
