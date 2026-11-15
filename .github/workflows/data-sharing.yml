@@ -120,7 +120,7 @@ jobs:
   generate:
     runs-on: ubuntu-latest
     outputs:
-       release_version: ${{steps.generate-app-Version.outputs.app_version}}
+       release_version: ${{steps.generate-app-Version.outputs.generate_version}}
     steps:
       - name: producer step
         id: generate-app-Version
