@@ -125,7 +125,7 @@ jobs:
       - name: producer step
         id: generate-app-Version
         run: |
-           GENERATE_VERSION = "3.1.0"
+           GENERATE_VERSION="3.1.0"
            echo "generate_version=$GENERATE_VERSION" >> $GITHUB_OUTPUT
 
   release:
