@@ -13,4 +13,20 @@ jobs:
             run: exit 1
 
           - name: Step 3
-            run: echo "Tests completed"
+            run: echo "Tests completed"  
+  #by default in github actions execution of steps depends on the previous step execution status
+
+    test:
+      runs-on: ubuntu-latest
+      steps: 
+         - name: Step 1 - Successful step
+           run: echo "Step 1 executed successfully"
+
+         - name: Step 2 - Intentional failure
+           run: |
+              echo "Step 2 is going to fail"
+              exit 1
+
+         - name: Step 3 - Success condition
+           if: success()
+           run: echo "Success condition executed"
