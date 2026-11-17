@@ -30,3 +30,7 @@ jobs:
          - name: Step 3 - Success condition
            if: success()
            run: echo "Success condition executed"
+        
+         - name: Step 4 - Failure condition
+           if: failure()
+           run: echo "Failure condition executed"
