@@ -42,4 +42,7 @@ jobs:
             - name: Step 2
               if: failure()
               run: echo "Failure condition executed"
+            - name: Step 3
+              if: success()
+              run: echo "Success condition executed"
     
