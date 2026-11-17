@@ -34,3 +34,12 @@ jobs:
          - name: Step 4 - Failure condition
            if: failure()
            run: echo "Failure condition executed"
+    failure-behaviour-check:
+          runs-on: ubuntu-latest
+          steps: 
+            - name: Step 1 
+              run: echo "Step 1 executed successfully"
+            - name: Step 2
+              if: failure()
+              run: echo "Failure condition executed"
+    
