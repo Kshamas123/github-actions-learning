@@ -50,4 +50,17 @@ jobs:
             - name: Step 3
               if: success()
               run: echo "Success condition executed"
+
+    workflow_validation:
+         runs-on: ubuntu-latest
+         steps: 
+             - name: step 1
+               run: echo "step 1 executed"
+             - name: step 2
+               run: exit 1
+             - name: step 3
+               if: always()
+               run: echo "step will be executed even if step failed or succeeded"
+             - name: step 4
+               run: echo "success executed"
     
