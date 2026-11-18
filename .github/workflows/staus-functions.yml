@@ -63,4 +63,21 @@ jobs:
                run: echo "step will be executed even if step failed or succeeded"
              - name: step 4
                run: echo "success executed"
-    
+    cancellation_check:
+      runs-on: ubuntu-latest
+
+      steps:
+        - name: Step 1
+          run: echo "Starting workflow"
+
+        - name: Step 2
+          run: sleep 60
+
+        - name: Step 3
+          if: cancelled()
+          run: echo "Workflow cancellation detected"
+
+        - name: Step 4
+          if: always()
+          run: echo "Always condition executed"
+      
