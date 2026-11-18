@@ -77,7 +77,11 @@ jobs:
           if: cancelled()
           run: echo "Workflow cancellation detected"
 
+        # - name: Step 4
+        #   if: always()
+        #   run: echo "Always condition executed"
+
         - name: Step 4
-          if: always()
-          run: echo "Always condition executed"
+          if: success()
+          run: echo "execute step 4"
       
