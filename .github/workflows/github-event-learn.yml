@@ -1,0 +1,15 @@
+name: Workflow Trigger Events
+
+on: 
+  push:
+
+jobs:
+  trigger-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display branch information
+        run: |
+          echo "Workflow triggered!"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Event: ${{ github.event_name }}"
+    
